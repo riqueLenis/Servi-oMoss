@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/icon" href="Imagens/logo mossmann.webp"/>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Cadastro Mossmann</title>
+</head>
+<body>
+    <div class="divUm">
+        <div class="form-container">
+            <form class="forms2" id="formCadastro" onsubmit="return validarForms(event)">
+                <label class="nome" for="nome">Nome e Sobrenome</label>
+                <input class="InputNome" type="text" id="nome" placeholder="Insira seu Nome e Sobrenome" required>
+                <label class="email" for="email">Email</label>
+                <input class="InputEmail" type="email" id="email" placeholder="Insira seu melhor Email" required>
+                <label class="senha" for="senha">Senha</label>
+                <div class="senha-container">
+                    <input class="InputSenha" type="password" id="senha" placeholder="Insira sua senha" required>
+                    <button type="button" class="toggleSenha" onclick="mostrarSenha()">
+                        <i id="iconeSenha" class="fa-solid fa-eye"></i>
+                    </button>
+                </div>
+                
+                <br>
+                <input class="btn2" type="submit" value="Cadastrar">
+            </form>
+        </div>
+    </div>
+
+    <!--validacao do forms cadastro-->
+    <script>
+        function validarForms(event) {
+            event.preventDefault();  //vai prevenir o comportamento padrao do formulario (recarregar a pagina)
+
+            //const é variavel para declarar e o resto coleta os dados dos campos
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+
+            //envia os dados para o servidor usando Fetch API
+            fetch('http://localhost:3000/cadastro', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ nome, email, senha })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.sucesso) {
+                    alert('Cadastro realizado com sucesso!');
+                    document.getElementById('formCadastro').reset();
+                    window.location.href = 'login.html';
+                } else {
+                    alert('Erro: ' + data.erro);
+                }
+            })
+            .catch(error => {
+                alert('Erro ao cadastrar: ' + error);
+            });
+        }
+        //funçao para aparecer a senha no input senha
+        function mostrarSenha() {
+    const senhaInput = document.getElementById("senha");
+    const iconeSenha = document.getElementById("iconeSenha");
+
+    if (senhaInput.type === "password") {
+        senhaInput.type = "text";
+        iconeSenha.classList.remove("fa-eye");
+        iconeSenha.classList.add("fa-eye-slash");
+    } else {
+        senhaInput.type = "password";
+        iconeSenha.classList.remove("fa-eye-slash");
+        iconeSenha.classList.add("fa-eye");
+    }
+}
+
+
+    </script>
+</body>
+</html>

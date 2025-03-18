@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), 
+        url("/Front-End/Imagens/aviaotesre2.jpg");
+    background-size: cover;
+    background-position: center;
+    font-family: 'Arial', sans-serif;
+    color: beige;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.divUm {
+    width: 100%;
+    max-width: 450px;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.form-container {
+    padding: 20px;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.forms2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.InputEmail, .InputSenha, .InputNome {
+    width: 100%;
+    padding: 17px 20px;
+    margin: 10px 0;
+    font-size: 20px;
+    border: 2px solid #32CD32;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    color: beige;
+    transition: all 0.3s ease;
+}
+
+.InputEmail:focus, .InputSenha:focus {
+    outline: none;
+    border-color: #228B22;
+    background: rgba(50, 205, 50, 0.2);
+    box-shadow: 0 0 8px rgba(50, 205, 50, 0.7);
+}
+
+.email, .senha {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.btn1 {
+    font-size: 20px;
+    padding: 12px 30px;
+    background-color: #32CD32;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn1:hover {
+    background-color: #228B22;
+    box-shadow: 0 4px 12px rgba(0, 128, 0, 0.3);
+}
+
+.btn1:active {
+    transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+    .divUm {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .InputEmail, .InputSenha {
+        font-size: 26px;
+        padding: 10px;
+    }
+
+    .btn1 {
+        font-size: 18px;
+    }
+}
+.btn2 {
+    font-size: 20px;
+    padding: 12px 30px;
+    background-color: #32CD32;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.senha-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.toggleSenha {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    position: absolute;
+    right: 7px;  
+}
