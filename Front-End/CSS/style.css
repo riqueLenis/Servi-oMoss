@@ -1,3 +1,6 @@
+/*lembrando que esse css está conectado com cadastro.html e login.html
+quando eu mexer algo em login verificar o cadastro.html e vise versa*/
+
 * {
     margin: 0;
     padding: 0;
@@ -19,6 +22,44 @@ body {
     overflow: hidden;
 }
 
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+    opacity: 67%;
+    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.9);
+}
+
+.Id {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 10px 20px;
+}
+
+.logo {
+    width: 13%;
+    margin-right: 20px;
+}
+nav ul li {
+    margin-right: 30px;
+}
+.IDD{
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 10px;
+    font-size: 20px;
+    
+}
+li:hover{
+    border-radius: 10px;
+    background-color: #32CD32;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.5);
+}
+
+
 .divUm {
     width: 100%;
     max-width: 450px;
@@ -26,6 +67,12 @@ body {
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.nome{
+    font-size: 25px;
+}
+.email, .senha{
+    font-size: 40px;
 }
 
 .form-container {
@@ -42,7 +89,7 @@ body {
     justify-content: center;
 }
 
-.InputEmail, .InputSenha, .InputNome {
+.InputEmail, .InputNome {
     width: 100%;
     padding: 17px 20px;
     margin: 10px 0;
@@ -52,9 +99,22 @@ body {
     background: rgba(255, 255, 255, 0.2);
     color: beige;
     transition: all 0.3s ease;
+    text-align: center;
+}
+.InputSenha{
+    width: 100%;
+    padding: 17px 50px;
+    margin: 10px 0;
+    font-size: 20px;
+    border: 2px solid #32CD32;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    color: beige;
+    transition: all 0.3s ease;
+    text-align: center;
 }
 
-.InputEmail:focus, .InputSenha:focus {
+.InputEmail:focus, .InputSenha:focus, .inputNome:focus {
     outline: none;
     border-color: #228B22;
     background: rgba(50, 205, 50, 0.2);
@@ -65,7 +125,6 @@ body {
     font-size: 20px;
     margin-bottom: 5px;
 }
-
 .btn1 {
     font-size: 20px;
     padding: 12px 30px;
@@ -86,6 +145,9 @@ body {
 .btn1:active {
     transform: scale(0.98);
 }
+.btn2:hover{
+    background-color: #228B22;
+}
 
 @media (max-width: 768px) {
     .divUm {
@@ -93,7 +155,7 @@ body {
         width: 90%;
     }
 
-    .InputEmail, .InputSenha {
+    .InputEmail, .InputSenha, .inputNome {
         font-size: 26px;
         padding: 10px;
     }
@@ -126,4 +188,15 @@ body {
     font-size: 18px;
     position: absolute;
     right: 7px;  
+}
+
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 87%;
+    color: #ccc;
+    opacity: 65%;
+    text-align: center;
+    margin: 7%;
 }

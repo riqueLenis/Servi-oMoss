@@ -9,6 +9,16 @@
     <title>Login Mossmann</title>
 </head>
 <body>
+    <header>
+        <div class="Id">
+            <a><img src="Imagens/logo site principal.png" class="logo" alt=""></a>
+            <nav>
+                <ul>
+                    <li class="IDD"><a href="index.html">Ínicio</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
     <div class="divUm">
         <div class="form-container">
             <form class="forms2" onsubmit="return fazerLogin(event)">
@@ -27,7 +37,15 @@
             </form>
         </div>
     </div>
-
+    <footer>
+        <div class="copy">
+            <p class="paragrafo">
+                &copy; 2025 A C Mossmann. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+    
+<!--aqui começa o js-->
     <script>
         //funcao para validar e fazer o login
         async function fazerLogin(event) {
