@@ -20,7 +20,7 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-}
+} 
 
 header {
     position: fixed;
@@ -199,4 +199,4 @@ footer{
     opacity: 65%;
     text-align: center;
     margin: 7%;
-}
+} 

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Mossmann Clientes</title>
+    <link rel="shortcut icon" href="../Front-End/Imagens/logo site principal.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div container>
+            <img src="../Front-End/Imagens/logo site principal.png" alt="" class="navLogo">
+        </div>
+        <nav class="navbar">
+                <a href="#">Ínicio</a>
+        </nav>
+    </header>
+      <!--aqui termina o header-->
+
+    <div>
+        <h1><u><i>Gerenciar Documentos</i></u></h1>
+    </div><br>
+    <!--finalizado o titulo-->
+
+    <div id="documentos-list">
+        <h2><i>Lista de Documentos</i></h2>
+        <table id="tabela-documentos">
+            <thead>
+                <tr>
+                    <th>Clientes</th>
+                    <th>Arquivos</th>
+                    <th>Vencimentos</th>
+                    <th>Prazo de Entrega</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+    <div id="upload-form" class="form-container">
+            <form id="form-upload">
+                <h2 class="formsH"><i>Enviar novo Documento</i></h2>
+            <label for="Cliente">Cliente:</label>
+            <select name="cliente" id="ciente" required>
+            </select><br><br>
+
+            <label for="arquivo">Arquivo</label>
+            <input type="file" id="arquivo" name="arquivo" required><br><br>
+
+            <label for="vencimento">Vencimento</label>
+            <input type="date" id="vencimento" name="vencimento"><br><br>
+
+            <label for="prazo">Prazo de Entrega</label>
+            <input type="date" id="prazo" name="prazo"><br><br>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <footer>
+        <div class="copy">
+            <p class="paragrafo">
+                &copy; 2025 A C Mossmann. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

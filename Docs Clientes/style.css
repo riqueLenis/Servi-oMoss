@@ -1,0 +1,123 @@
+body{
+    /*background-image: url('../Front-End/Imagens/aviaocad.png');*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+    
+    
+}
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 10px (rgba(0, 0, 0, 0.3));
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-container {
+    width: 50%;
+    margin: 80px auto;
+    background-color: (rgba(0, 0, 0, 0.4));
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgb(0, 255, 0, 0.3);
+    padding: 15px;
+    transition: 1s;
+    
+}
+.form-container:hover{
+    border: 2px solid rgba(0, 255, 0, 0.4);
+    box-shadow: 0 0 20px rgba( 0, 255, 0, 0.5);
+}
+
+
+.form-container input, .form-container button{
+    width: 50%;
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+}
+
+.form-container input{
+    background: rgb(255, 255, 255, 0.9);
+    color: #000;
+}
+
+.form-container button{
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 9px;
+    transition: 0.5s;
+}
+h1, h2 {
+    text-align: center;
+    font-size: 32px;
+    color: lightsteelblue;
+    transition: color 0.5s;
+}
+h1:hover, h2:hover{
+    color: #90EE90;
+}
+
+.navLogo{
+    max-width: 11%;
+}
+
+form{
+    text-align: center;
+    font-size: 20px;
+}
+
+form
+#upload-form, #documentos-list{
+    margin-bottom: 20px;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td{
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+th{
+    background-color: #f2f2f2;
+}
+button{
+    padding: 10px 15px;
+    border-radius: 5px;
+
+
+}
+button:hover{
+    background-color: #90EE90;
+    transition: 1s;
+}
+
+select{
+    margin-top: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+footer{
+    font-size: 16px;
+    text-align: center;
+    padding: 5px;
+}
+footer:hover{
+    color: darkgreen;
+}
