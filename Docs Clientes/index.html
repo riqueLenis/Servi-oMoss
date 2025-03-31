@@ -1,20 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Mossmann Clientes</title>
     <link rel="shortcut icon" href="../Front-End/Imagens/logo site principal.png" type="image/x-icon">
-</head>
-<body>
+</head> 
+<body> 
     <header>
         <div container>
             <img src="../Front-End/Imagens/logo site principal.png" alt="" class="navLogo">
         </div>
-        <nav class="navbar">
-                <a href="#">Ínicio</a>
-        </nav>
     </header>
       <!--aqui termina o header-->
 
@@ -23,38 +20,32 @@
     </div><br>
     <!--finalizado o titulo-->
 
-    <div id="documentos-list">
-        <h2><i>Lista de Documentos</i></h2>
-        <table id="tabela-documentos">
-            <thead>
-                <tr>
-                    <th>Clientes</th>
-                    <th>Arquivos</th>
-                    <th>Vencimentos</th>
-                    <th>Prazo de Entrega</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-        </table>
-    </div>
-
+    <!--envio de docs logo abaixo-->
     <div id="upload-form" class="form-container">
-            <form id="form-upload">
-                <h2 class="formsH"><i>Enviar novo Documento</i></h2>
-            <label for="Cliente">Cliente:</label>
-            <select name="cliente" id="ciente" required>
-            </select><br><br>
-
-            <label for="arquivo">Arquivo</label>
+        <form id="form-upload" enctype="multipart/form-data">
+            <h2 class="formsH"><i>Enviar novo Documento</i></h2>
+    
+            <label for="cliente" class="clientes">Cliente:</label>
+            <div class="cliente-container">
+                <input type="text" id="cliente-input" placeholder="Digite o nome do cliente">
+                <button type="button" id="add-cliente">Adicionar</button>
+            </div>
+            <!--filtro de pesquisa-->
+            <input type="text" id="filtro-clientes" placeholder="🔍 Filtrar clientes ou orgãos..." onkeyup="filtrarClientes()">
+            <!--lista de clientes adicionados-->
+            <ul id="cliente-list"></ul>
+            <br>
+    
+            <label for="arquivo" class="arquivos">Arquivo</label>
             <input type="file" id="arquivo" name="arquivo" required><br><br>
-
-            <label for="vencimento">Vencimento</label>
+    
+            <label for="vencimento" class="vencimentos">Vencimentos</label>
             <input type="date" id="vencimento" name="vencimento"><br><br>
-
-            <label for="prazo">Prazo de Entrega</label>
-            <input type="date" id="prazo" name="prazo"><br><br>
-
-            <button type="submit">Enviar</button>
+    
+            <label for="vencimento" class="infos">Informações Adicionais</label><br><br>
+            <textarea name="obs" id="obs" class="area" placeholder="Se houve alteração no documento, adicione aqui! Pelo contrário, prossiga."></textarea>
+    
+            <button type="button" id="enviar-form">Enviar</button>
         </form>
     </div>
 
@@ -66,7 +57,77 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        let clientesSelecionados = [];
+    
+        //add cliente na lista
+        document.getElementById("add-cliente").addEventListener("click", function () {
+            let input = document.getElementById("cliente-input");
+            let nome = input.value.trim();
+    
+            if (nome !== "" && !clientesSelecionados.includes(nome)) {
+                let lista = document.getElementById("cliente-list");
+                let item = document.createElement("li");
+                item.textContent = nome;
+                item.setAttribute("data-nome", nome);
+    
+                let removeBtn = document.createElement("button");
+                removeBtn.textContent = "❌";
+                removeBtn.classList.add("remove-btn");
+    
+                removeBtn.addEventListener("click", function () {
+                    lista.removeChild(item);
+                    clientesSelecionados = clientesSelecionados.filter(cliente => cliente !== nome);
+                });
+    
+                item.appendChild(removeBtn);
+                lista.appendChild(item);
+                clientesSelecionados.push(nome);
+                input.value = "";
+            }
+        });
+        //filtra os clientes da lista acima
+        function filtrarClientes() {
+            let filtro = document.getElementById("filtro-clientes").value.toLowerCase();
+            let lista = document.getElementById("cliente-list").getElementsByTagName("li");
+    
+            for (let i = 0; i < lista.length; i++) {
+                let clienteNome = lista[i].getAttribute("data-nome").toLowerCase();
+                lista[i].style.display = clienteNome.includes(filtro) ? "" : "none";
+            }
+        }
+    
+        //envia os dadaos para o backend
+        document.getElementById("enviar-form").addEventListener("click", async function () {
+            let formData = new FormData();
+            let arquivoInput = document.getElementById("arquivo").files[0];
+            let vencimentoInput = document.getElementById("vencimento").value;
+            let obsInput = document.getElementById("obs").value;
+    
+            if (clientesSelecionados.length === 0 || !arquivoInput) {
+                alert("Adicione pelo menos um cliente e selecione um arquivo.");
+                return;
+            }
+    
+            formData.append("clientes", JSON.stringify(clientesSelecionados)); // Envia a lista de clientes
+            formData.append("arquivo", arquivoInput);
+            formData.append("vencimento", vencimentoInput);
+            formData.append("informacoes", obsInput);
+    
+            try {
+                let response = await fetch("http://localhost:3000/upload", {
+                    method: "POST",
+                    body: formData,
+                });
+    
+                let data = await response.json();
+                alert(data.mensagem);
+            } catch (error) {
+                console.error("Erro ao enviar os dados:", error);
+            }
+        });
+    </script>
+    
 
 </body>
 </html>

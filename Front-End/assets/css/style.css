@@ -198,6 +198,9 @@ nav.navbar.bootsnav .navbar-toggle i{color: #228B22;}
     height:800px;
     z-index: 1;
 }
+.informacao:hover{
+    background-color: #228B22;
+}
 .welcome-hero:before{
     position: absolute;
     content: " ";

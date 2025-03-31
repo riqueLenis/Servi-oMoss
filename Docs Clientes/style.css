@@ -1,52 +1,54 @@
 body{
-    /*background-image: url('../Front-End/Imagens/aviaocad.png');*/
-    background-repeat: no-repeat;
+    background-image: url('../Front-End/Imagens/gemini.jpg');
     background-size: cover;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin: 0;
-    
-    
+    padding-top: 70px;
+    color: #fff;
 }
+
 header {
     position: fixed;
     top: 0;
     width: 100%;
     background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 10px (rgba(0, 0, 0, 0.3));
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(4px);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 5px;
 }
 
+/* abaixo sao as labels enviar documentos */
 .form-container {
     width: 50%;
-    margin: 80px auto;
+    margin: 50px auto;
     background-color: (rgba(0, 0, 0, 0.4));
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgb(0, 255, 0, 0.3);
-    padding: 15px;
-    transition: 1s;
-    
-}
-.form-container:hover{
-    border: 2px solid rgba(0, 255, 0, 0.4);
-    box-shadow: 0 0 20px rgba( 0, 255, 0, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(192, 198, 192, 0.3);
+    padding: 17px;
+    transition: 0.4s
 }
 
+.form-container:hover{
+    border: 2px solid rgba(176, 194, 176, 0.4);
+    box-shadow: 0 0 20px rgba(188, 193, 188, 0.5);
+}
 
 .form-container input, .form-container button{
-    width: 50%;
-    margin-top: 12px;
+    width: 98%;
+    margin-top: 10px;
     padding: 12px;
     border-radius: 8px;
     border: none;
     font-size: 16px;
     outline: none;
+    align-items: center;
 }
 
-.form-container input{
+.form-container input, .area{
     background: rgb(255, 255, 255, 0.9);
     color: #000;
 }
@@ -58,14 +60,25 @@ header {
     cursor: pointer;
     font-weight: bold;
     padding: 9px;
-    transition: 0.5s;
+    transition: 0.3s;
 }
-h1, h2 {
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+    color: #ccc;
+    transition: color 0.5s;
+    margin-bottom: 15px;
+}
+
+h2 {
     text-align: center;
     font-size: 32px;
-    color: lightsteelblue;
+    color: #ccc;
     transition: color 0.5s;
+    margin-top: 5px;
 }
+
 h1:hover, h2:hover{
     color: #90EE90;
 }
@@ -79,29 +92,15 @@ form{
     font-size: 20px;
 }
 
-form
-#upload-form, #documentos-list{
+form #upload-form, #documentos-list{
     margin-bottom: 20px;
 }
-table{
-    width: 100%;
-    border-collapse: collapse;
-}
-th, td{
-    border: 1px solid #ccc;
-    padding: 8px;
-    text-align: left;
-}
 
-th{
-    background-color: #f2f2f2;
-}
 button{
     padding: 10px 15px;
     border-radius: 5px;
-
-
 }
+
 button:hover{
     background-color: #90EE90;
     transition: 1s;
@@ -112,12 +111,85 @@ select{
     border-radius: 5px;
     font-size: 15px;
 }
+.arquivos, .infos,.vencimentos, .prazos, .clientes{
+    font-size: 25px;
+    background-color: rgba(255, 255, 224, 0.6);
+    color: #2f2f2f;
+    border-radius: 5px; 
+}
+textarea{
+    align-items: center;
+    width: 763px;
+    height: 100px;
+    border-radius: 5px;
+}
 
 footer{
     font-size: 16px;
     text-align: center;
     padding: 5px;
 }
+
 footer:hover{
-    color: darkgreen;
+    color: #90EE90;
+    transition: 0.5s;
 }
+
+/* abaixo se encontra os filtros e cadastros de clientes/orgaos */
+.cliente-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#cliente-input {
+    width: 70%;
+    padding: 8px;
+}
+
+#add-cliente {
+    background: #4CAF50;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#filtro-clientes {
+    width: 744px;
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#cliente-list {
+    list-style: none;
+    padding: 0;
+    max-height: 100px;
+    overflow-y: auto;
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    border-radius: 5px;
+    background: rgba(0, 255, 0, 0.1);
+}
+
+#cliente-list li {
+    background: rgba(3, 7, 1, 0.4);
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.remove-btn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+/* acaba aqui */
