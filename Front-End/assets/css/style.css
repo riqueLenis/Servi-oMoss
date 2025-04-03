@@ -200,6 +200,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #228B22;}
 }
 .informacao:hover{
     background-color: #228B22;
+    transition: 0.3s;
 }
 .welcome-hero:before{
     position: absolute;
@@ -226,6 +227,8 @@ nav.navbar.bootsnav .navbar-toggle i{color: #228B22;}
     color: #fcfcfc;
     margin-top: 25px;
 }
+
+
 
 .welcome-hero-serch-box{margin-top: 78px;display: flex;}
 .welcome-hero-form {
@@ -864,15 +867,20 @@ nav.navbar.bootsnav .navbar-toggle i{color: #228B22;}
     100%  {bottom:7px;}
 }
 
-.ZapLink {
-    width: 200px;
-    height: 70px;
+.zapLink {
+    width: 230px;
+    height: 90px;
     display: flex;
-    justify-content: center;  /* centraliza horizontalmente */
-    align-items: center;  /* centraliza verticalmente */
+    justify-content: center;
+    align-items: center;
     background: #228B22;
-    margin: 0 auto;  /* centraliza o botãa no container pai*/
-    text-align: center;  /* centraliza o texto dentro do botao */
+    margin: 0 auto;
+    text-align: center; 
+    border-radius: 5px;
+}
+
+.zapLink:hover{
+    color: white;
 }
 
 .logoCerto {

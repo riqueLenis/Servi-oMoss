@@ -33,7 +33,6 @@ header {
 }
 
 .form-container:hover{
-    border: 2px solid rgba(176, 194, 176, 0.4);
     box-shadow: 0 0 20px rgba(188, 193, 188, 0.5);
 }
 
@@ -77,6 +76,12 @@ h2 {
     color: #ccc;
     transition: color 0.5s;
     margin-top: 5px;
+}
+h3{
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #fff;
+    font-size: 20px;
 }
 
 h1:hover, h2:hover{

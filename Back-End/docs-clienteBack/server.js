@@ -1,8 +1,8 @@
-const express = require("express");
-const multer = require("multer");
-const cors = require("cors");
-const { Pool } = require("pg");
-const path = require("path");
+const express = require('express');
+const multer = require('multer');
+const cors = require('cors');
+const { Pool } = require('pg');
+const path = require('path');
 
 const app = express();
 app.use(cors());
@@ -16,17 +16,17 @@ const pool = new Pool({
     port: 5432,
 });
 
-//config do Multer para uploads
+//config do multer para uploads de pastas
 const storage = multer.diskStorage({
     destination: "uploads/",
     filename: (req, file, cb) => {
-        cb(null, Date.now() + path.extname(file.originalname));
+        cb(null, `${Date.now()}-${file.originalname}`);
     },
 });
 const upload = multer({ storage });
 
 //rota para salvar no banco
-app.post("/upload", upload.single("arquivo"), async (req, res) => {
+app.post("/uploads", upload.single("arquivo"), async (req, res) => {
     try {
         const { clientes, vencimento, informacoes } = req.body;
         const arquivo = req.file.filename;
@@ -53,7 +53,7 @@ app.post("/upload", upload.single("arquivo"), async (req, res) => {
     }
 });
 
-//inicia o servidor na porta 3000
-app.listen(3000, () => {
-    console.log("Servidor rodando na porta 3000");
+//inicia o servidor na por4000
+app.listen(4000, () => {
+    console.log("Servidor rodando na porta 4000");
 });

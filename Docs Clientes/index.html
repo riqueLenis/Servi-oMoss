@@ -16,7 +16,8 @@
       <!--aqui termina o header-->
 
     <div>
-        <h1><u><i>Gerenciar Documentos</i></u></h1>
+        <h1><u><i>Seja bem-vindo à nossa plataforma Mossmann!</i></u></h1><br>
+        <h3>Os documentos para envio estão listados abaixo. Siga as instruções para completar o processo de envio.</h3>
     </div><br>
     <!--finalizado o titulo-->
 
@@ -115,7 +116,7 @@
             formData.append("informacoes", obsInput);
     
             try {
-                let response = await fetch("http://localhost:3000/upload", {
+                let response = await fetch("http://localhost:4000/uploads", {
                     method: "POST",
                     body: formData,
                 });
@@ -127,7 +128,6 @@
             }
         });
     </script>
-    
 
 </body>
 </html>
