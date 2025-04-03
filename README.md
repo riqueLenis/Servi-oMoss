@@ -23,7 +23,7 @@ O ambiente de desenvolvimento está dividido em: back-end, front-end, docs clien
 
 Front-End:
 Foi usado pouco bootstrap (somente JS e CSS), o site informativo foi desenvolvido usando linguagem WEB (HTML, CSS e JS), com interações na Navbar (início, serviços, etc.), links externos para WhatsApp
-redirecionando direto para um dos atendentes da empresa. Os dois formulários (cadastro e login) junto com o site principal estão na mesma pasta: ![image](https://github.com/user-attachments/assets/b0fac6d8-ddbe-42ac-ad04-238daab061d5)
+redirecionando direto para um dos atendentes da empresa. Os dois formulários (cadastro e login) junto com o site principal estão na mesma pasta: index.html, login.html, cadastro.html. 
 logo abaixo tem um pequeno informativo sobre "manutenção", quando o site estiver em manutenção. Nessa mesma pasta SITE MOSS (pasta raíz), a área do cliente se encontra em uma pasta chaada: "Docs CLientes".
 
 Back-End:
