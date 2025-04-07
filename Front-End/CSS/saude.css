@@ -1,6 +1,6 @@
-body {
+body{
     margin: 0;
-    padding: 0;
+    left: 0;
     background-image: url('../Imagens/aviaoNovo2.jpg');
     background-repeat: no-repeat;
     background-position: center;
@@ -10,8 +10,7 @@ body {
     position: relative;
     min-height: 100vh;
 }
-
-body::before {
+body::before{
     content: "";
     position: absolute;
     top: 0;
@@ -21,9 +20,7 @@ body::before {
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 1;
 }
-
-/*Wrapper para o conteúdo principal*/
-.content-wrapper {
+.content-wrapper{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -33,8 +30,6 @@ body::before {
     position: relative;
     z-index: 2;
 }
-
-/*estilos para a parte superior (container e logo)*/
 .top-content {
     display: flex;
     justify-content: space-between;
@@ -65,6 +60,7 @@ body::before {
       transform: translateX(0);
     }
   }
+
 .container {
     text-align: left;
     color: white;
@@ -76,43 +72,40 @@ body::before {
 .container h1 {
     font-size: 2.5em;
     margin-bottom: 20px;
+    text-align: center;
     animation: fadeInUp 1s ease-out forwards;
 }
 
 .container p {
     font-size: 1.1em;
     line-height: 1.6;
+    text-align: center;
 }
-
-.logoKalife {
+.logoSaude{
     text-align: right;
-    width: 30%;
+    width: 100%;
     max-width: 500px;
     animation: fadeInUp 1s ease-out forwards;
 }
-
-.kalifeLogo {
+.saudeLogo{
     max-width: 100%;
     height: auto;
     animation: fadeInUp 1s ease-out forwards;
 }
-
-.containerServ {
+.containerServ{
     text-align: center;
-    width: 90%;
+    width: 96%;
     max-width: 1200px;
     margin: 30px auto;
     animation: fadeInUp 1s ease-out forwards;
 }
-
-.containerServ h2 {
+.containerServ h2{
     font-size: 2em;
     margin-bottom: 30px;
     color: white;
     animation: fadeInUp 1s ease-out forwards;
 }
-
-.containerServ .buttons {
+.containerServ .buttons{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -120,8 +113,7 @@ body::before {
     margin-top: 30px;
     animation: fadeInUp 1s ease-out forwards;
 }
-
-.containerServ .button {
+.containerServ .button{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -129,7 +121,7 @@ body::before {
     width: 220px;
     height: 120px;
     padding: 15px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.2);
     border-radius: 8px;
     color: white;
     text-align: center;
@@ -137,35 +129,26 @@ body::before {
     transition: transform 0.2s, background-color 0.3s;
     cursor: pointer;
 }
-
-.containerServ .button:hover {
+.containerServ .button:hover{
     background-color: rgba(255, 255, 255, 0.2);
     transform: scale(1.05);
 }
-
-.containerServ .button i {
-    font-size: 2em;
-    margin-bottom: 10px;
-}
-
-.containerServ .buttonContato {
-    background-color: #007bff;
+.buttonFim{
+    background-color: transparent;
+    border: 2px solid white;
     color: white;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1em;
+    padding: 10px 20px;
+    font-size: 18px;
     cursor: pointer;
-    margin-top: 30px;
-    transition: background-color 0.3s;
+    border-radius: 5px;
+    margin-top: 25px;
 }
-
-.containerServ .buttonContato:hover {
-    background-color: #0056b3   ;
+.buttonFim:hover{
+    background-color: #228B22;
+    color: black;
+    transition: 0.4s;
 }
-
-/* Estilos para o logo final */
-.logoFinal {
+.logoFinal{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -177,38 +160,20 @@ body::before {
     margin: 30px auto;
     transition: transform 0.2s, background-color 0.3s;
 }
-
-.logoFinal img {
+.logoFinal img{
     max-width: 100%;
-    max-height: 100%; 
+    max-height: 100%;
 }
 .logoFinal:hover{
     background-color: rgba(255, 255, 255, 0.1);
     transform: scale(1.05);
-    transition: 0.3s;
-}
-.buttonFim{ 
-  background-color: transparent;
-  border: 2px solid white;
-  color: white;
-  padding: 10px 20px;
-  font-size: 18px;
-  cursor: pointer;
-  border-radius: 5px;
-  margin-top: 20px;
-}
-.buttonFim:hover{
-    background-color: #228B22;
-    color: black;
     transition: 0.4s;
 }
-
-footer {
+footer{
     position: relative;
     width: 100%;
     color: white;
     text-align: center;
     font-size: 15px;
-    margin-top: 50px;
     padding-bottom: 20px;
 }
