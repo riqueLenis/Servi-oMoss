@@ -118,3 +118,38 @@ footer{
   font-size: 15px;
   margin: 50px;
 }
+@media (max-width: 768px) {
+  .logo img {
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .button {
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    padding: 10px;
+  }
+
+  .contact {
+    width: 80%;
+    font-size: 16px;
+  }
+
+  .container {
+    width: 95%;
+  }
+
+  footer {
+    font-size: 13px;
+    margin: 20px;
+    position: static;
+    padding-bottom: 20px;
+  }
+}
