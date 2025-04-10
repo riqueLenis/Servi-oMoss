@@ -14,7 +14,7 @@
             <a><img src="Imagens/logo site principal.png"  class="logo" alt=""></a>
             <nav>
                 <ul>
-                    <li class="IDD"><a href="index.html">Ínicio</a></li>
+                    <li class="IDD"><a href="principal.html">Ínicio</a></li>
                 </ul>
             </nav>
         </div>
@@ -57,13 +57,12 @@
             const email = document.getElementById('email').value;
             const senha = document.getElementById('senha').value;
 
-            //envia os dados para o servidor usando Fetch API
-            fetch('http://localhost:3000/cadastro', {
-                method: 'POST',
-                headers: {
+            fetch('https://acmossmann.com.br//cadastro', {
+                    method: 'POST',
+                    headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ nome, email, senha })
+                    body: JSON.stringify({ nome, email, senha })
             })
             .then(response => response.json())
             .then(data => {

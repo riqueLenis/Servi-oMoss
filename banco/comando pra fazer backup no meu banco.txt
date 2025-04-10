@@ -1,0 +1,1 @@
+pg_dump -U postgres -d mossmann -F p -f C:\backups\mossmann_backup.sql

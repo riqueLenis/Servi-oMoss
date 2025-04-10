@@ -5,21 +5,20 @@ const bodyParser = require('body-parser');
 const cors = require('cors');  
 const { JsonWebTokenError } = require('jsonwebtoken');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const jwt = require('jsonwebtoken');
-
 
 app.use(cors());
 app.use(bodyParser.json());
 
 //config do postgre
 const pool = new Pool({
-  user: 'postgres',
+  user: 'acmossbr25',
   host: 'localhost',
-  database: 'mossmann',
+  database: 'acmossbr25_acmoss',
   password: 'postgre',
   port: 5432,
-});
+}); 
 
 //rota para cadastrar usuario 
 app.post('/cadastro', async (req, res) => {

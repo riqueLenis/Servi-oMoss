@@ -5,8 +5,6 @@
 -- Dumped from database version 17.4
 -- Dumped by pg_dump version 17.4
 
--- Started on 2025-04-07 13:52:50
-
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET idle_in_transaction_session_timeout = 0;
@@ -24,7 +22,6 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- TOC entry 220 (class 1259 OID 16596)
 -- Name: documentos; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -41,7 +38,6 @@ CREATE TABLE public.documentos (
 ALTER TABLE public.documentos OWNER TO postgres;
 
 --
--- TOC entry 219 (class 1259 OID 16595)
 -- Name: documentos_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -57,8 +53,6 @@ CREATE SEQUENCE public.documentos_id_seq
 ALTER SEQUENCE public.documentos_id_seq OWNER TO postgres;
 
 --
--- TOC entry 4910 (class 0 OID 0)
--- Dependencies: 219
 -- Name: documentos_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -66,7 +60,6 @@ ALTER SEQUENCE public.documentos_id_seq OWNED BY public.documentos.id;
 
 
 --
--- TOC entry 218 (class 1259 OID 16579)
 -- Name: usuarios; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -81,7 +74,6 @@ CREATE TABLE public.usuarios (
 ALTER TABLE public.usuarios OWNER TO postgres;
 
 --
--- TOC entry 217 (class 1259 OID 16578)
 -- Name: usuarios_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -97,8 +89,6 @@ CREATE SEQUENCE public.usuarios_id_seq
 ALTER SEQUENCE public.usuarios_id_seq OWNER TO postgres;
 
 --
--- TOC entry 4911 (class 0 OID 0)
--- Dependencies: 217
 -- Name: usuarios_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -106,7 +96,6 @@ ALTER SEQUENCE public.usuarios_id_seq OWNED BY public.usuarios.id;
 
 
 --
--- TOC entry 4748 (class 2604 OID 16599)
 -- Name: documentos id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -114,7 +103,6 @@ ALTER TABLE ONLY public.documentos ALTER COLUMN id SET DEFAULT nextval('public.d
 
 
 --
--- TOC entry 4747 (class 2604 OID 16582)
 -- Name: usuarios id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -122,8 +110,6 @@ ALTER TABLE ONLY public.usuarios ALTER COLUMN id SET DEFAULT nextval('public.usu
 
 
 --
--- TOC entry 4904 (class 0 OID 16596)
--- Dependencies: 220
 -- Data for Name: documentos; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -151,12 +137,11 @@ COPY public.documentos (id, cliente, arquivo, vencimento, informacoes, data_uplo
 21	testando	Certificado de Registro Estabelecimento.PDF	2025-04-30	testando o nome do arq	2025-04-03 11:04:34.455567
 22	teste do teste	1743692739840-VENCIMENTOS-1.pdf	2025-12-05	sims ismismismis	2025-04-03 11:05:39.937309
 23	teste	1743693593570-Contatos RO_copia.xlsx	2025-07-30	Sim, alterei o documento!!	2025-04-03 11:19:53.647076
+24	eu	1744289036675-Senhas Wi-Fi.docx	2025-04-30	nao houve	2025-04-10 08:43:56.757823
 \.
 
 
 --
--- TOC entry 4902 (class 0 OID 16579)
--- Dependencies: 218
 -- Data for Name: usuarios; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -191,29 +176,26 @@ COPY public.usuarios (id, nome, email, senha) FROM stdin;
 28	henrique testando 2	henrique1234@gmail.com	$2b$10$rHkJ/3.ftHBpMVJKcm/QwOMB67s5QbVHbTJ5L.IoxXGVUGR94C7w.
 29	allan Allan	allan@gmail.com	$2b$10$6EucrSNMxLWPdmSBKGQ8be.BMjvusTH..euSWNDEM0tpXhvhtP6p2
 30	henrique lenis	henriquelenis10@gmail.com	$2b$10$TA4xuiVAe8PJp.BRWQqSbulJzlNKxsNIwVPwiW8zqM4X2OSU6ofX6
+31	henrique lenis	rique325@gmail.com	$2b$10$Az5a1tXu0gyNEeMuhdds0uApx4E0EcKqOC9hWk8v0ktBDVrBRPt0q
+32	henrique lenis 	henrique@hotmail.com	$2b$10$LN4ue9iMBo7yh0ySKjf1.u3QkOcjpqpNQ/6he4u2wSLD66mRm3KQq
 \.
 
 
 --
--- TOC entry 4912 (class 0 OID 0)
--- Dependencies: 219
 -- Name: documentos_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.documentos_id_seq', 23, true);
+SELECT pg_catalog.setval('public.documentos_id_seq', 24, true);
 
 
 --
--- TOC entry 4913 (class 0 OID 0)
--- Dependencies: 217
 -- Name: usuarios_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.usuarios_id_seq', 30, true);
+SELECT pg_catalog.setval('public.usuarios_id_seq', 32, true);
 
 
 --
--- TOC entry 4755 (class 2606 OID 16604)
 -- Name: documentos documentos_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -222,7 +204,6 @@ ALTER TABLE ONLY public.documentos
 
 
 --
--- TOC entry 4751 (class 2606 OID 16588)
 -- Name: usuarios usuarios_email_key; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -231,15 +212,12 @@ ALTER TABLE ONLY public.usuarios
 
 
 --
--- TOC entry 4753 (class 2606 OID 16586)
 -- Name: usuarios usuarios_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.usuarios
     ADD CONSTRAINT usuarios_pkey PRIMARY KEY (id);
 
-
--- Completed on 2025-04-07 13:52:50
 
 --
 -- PostgreSQL database dump complete
